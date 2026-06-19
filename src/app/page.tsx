@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 
 // ─── Animated Counter Hook ─────────────────────────────────────────────────
 function useCounter(target: number, duration: number = 2000, start: boolean = false) {
@@ -849,6 +850,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── TESTIMONIALS ──────────────────────────────────── */}
+      <TestimonialsCarousel />
 
       {/* ── READINESS CALCULATOR ─────────────────────────── */}
       <section ref={calcSection.ref} className="py-24 bg-gray-50">
