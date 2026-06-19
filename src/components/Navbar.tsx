@@ -25,6 +25,9 @@ const NAV = {
   ],
   Company: [
     { label: "About", href: "/about", desc: "Our mission and story" },
+    { label: "Leadership", href: "/leadership", desc: "Meet the leadership team" },
+    { label: "Trust Center", href: "/trust", desc: "Security, compliance and privacy" },
+    { label: "Partners", href: "/partners", desc: "Our partner ecosystem" },
     { label: "Security", href: "/security", desc: "Enterprise security framework" },
     { label: "Blog", href: "/blog", desc: "Insights and resources" },
     { label: "Case Studies", href: "/case-studies", desc: "Customer success stories" },
@@ -91,7 +94,7 @@ export default function Navbar() {
                 </button>
                 {activeMenu === key && (
                   <div className="absolute top-full left-0 pt-2 z-50"
-                    style={{minWidth: "280px"}}
+                    style={{minWidth: key === "Company" ? "280px" : "260px"}}
                     onMouseEnter={() => handleMouseEnter(key)}
                     onMouseLeave={handleMouseLeave}>
                     <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-2 overflow-hidden">
@@ -147,6 +150,9 @@ export default function Navbar() {
               { href: "/services", label: "Services" },
               { href: "/pricing", label: "Pricing" },
               { href: "/about", label: "About" },
+              { href: "/leadership", label: "Leadership" },
+              { href: "/trust", label: "Trust Center" },
+              { href: "/partners", label: "Partners" },
               { href: "/security", label: "Security" },
               { href: "/contact", label: "Contact" },
             ].map(({ href, label }) => (
