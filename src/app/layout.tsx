@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import AIAdvisor from "@/components/AIAdvisor";
 
 export const metadata: Metadata = {
   title: { default: "CorridorBridge — Cross-Border Infrastructure for Africa and Canada", template: "%s | CorridorBridge" },
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <CookieConsent />
+        <AIAdvisor />
       </body>
     </html>
   );
