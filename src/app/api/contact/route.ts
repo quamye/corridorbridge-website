@@ -1,67 +1,35 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
+import { getSupabaseAdmin } from "@/lib/supabase";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { firstName, lastName, email, company, corridor, message } = body;
+    const { firstName, lastName, email, company, corridor, message, intent = "contact", page_source, utm_source, utm_medium, utm_campaign, referrer } = body;
+    if (!firstName || !email) return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
+    if (body.website) return NextResponse.json({ success: true });
 
-    if (!firstName || !email || !message) {
-      return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
-    }
-
-    // Save to Supabase
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    );
-
-    const { error: dbError } = await supabase.from("leads").insert({
-      first_name: firstName,
-      last_name: lastName,
-      email,
-      company,
-      corridor,
-      message,
-      source: "corridorbridge.com/contact",
-      status: "new",
+    const supabase = getSupabaseAdmin();
+    await supabase.from("leads").insert({
+      first_name: firstName, last_name: lastName, email, company, corridor, message,
+      intent, source: "corridorbridge.com", page_source, utm_source, utm_medium, utm_campaign, referrer, status: "new",
     });
 
-    if (dbError) {
-      console.error("Supabase insert error:", dbError);
-    }
-
-    // Send email via Resend
-    const resendKey = process.env.RESEND_API_KEY;
-    if (resendKey) {
+    const key = process.env.RESEND_API_KEY;
+    if (key) {
       await fetch("https://api.resend.com/emails", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${resendKey}`,
-        },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
         body: JSON.stringify({
           from: "CorridorBridge <hello@corridorbridge.com>",
           to: ["hello@corridorbridge.com"],
-          subject: `New Lead: ${firstName} ${lastName} — ${company || "No company"}`,
-          html: `
-            <h2>New Contact Form Submission</h2>
-            <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Company:</strong> ${company || "—"}</p>
-            <p><strong>Corridor:</strong> ${corridor || "—"}</p>
-            <p><strong>Message:</strong></p>
-            <p>${message}</p>
-            <hr/>
-            <p><em>Source: corridorbridge.com/contact</em></p>
-          `,
+          subject: `New ${intent}: ${firstName} ${lastName} — ${company || "No company"}`,
+          html: `<h2>New Lead — ${intent}</h2><p><b>Name:</b> ${firstName} ${lastName}</p><p><b>Email:</b> ${email}</p><p><b>Company:</b> ${company || "—"}</p><p><b>Corridor:</b> ${corridor || "—"}</p><p><b>Message:</b> ${message || "—"}</p><p><b>Source:</b> ${page_source || "—"}</p>`,
         }),
       });
     }
-
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error("Contact route error:", err);
-    return NextResponse.json({ error: "An unexpected error occurred." }, { status: 500 });
+    console.error("Contact error:", err);
+    return NextResponse.json({ error: "Unexpected error." }, { status: 500 });
   }
 }
