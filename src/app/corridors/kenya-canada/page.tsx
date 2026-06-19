@@ -1,39 +1,119 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-export const metadata: Metadata = { title: "Kenya ↔ Canada Corridor", description: "The Kenya-Canada corridor connects East Africa's financial hub with Canadian enterprises. CorridorBridge helps organizations navigate compliance, payments, and logistics across this growing trade lane.", keywords: "Kenya Canada trade, Kenya Canada payments, Kenya Canada corridor" };
+
+export const metadata: Metadata = {
+  title: "Kenya ↔ Canada Corridor",
+  description: "The Kenya-Canada corridor connects East Africa's most sophisticated financial system with Canadian markets. Kenya's leadership in mobile money and fintech makes it a strategic entry point for Canadian businesses.",
+  keywords: "Kenya Canada trade, Kenya Canada payments, Kenya ↔ Canada Corridor, cross-border Kenya",
+};
+
 export default function CorridorPage() {
+  const stats = [
+    ["55M+", "Kenyan population"],
+    ["KES/CAD", "Primary currencies"],
+    ["CBK Standards", "Regulatory oversight"],
+    ["M-Pesa leader", "Mobile money hub"],
+  ];
+
+  const otherCorridors = [
+    ["/corridors/africa-canada", "Africa ↔ Canada"],
+    ["/corridors/ghana-canada", "Ghana ↔ Canada"],
+    ["/corridors/nigeria-canada", "Nigeria ↔ Canada"],
+    ["/corridors/kenya-canada", "Kenya ↔ Canada"],
+  ].filter(([href]) => !href.includes("kenya-canada"));
+
+  const services = [
+    { title: "Payment Infrastructure", desc: "Licensed partner selection, workflow design, and settlement tracking for Kenya-Canada payments.", href: "/payments", icon: "💸" },
+    { title: "Compliance Programme", desc: "FINTRAC, AML, KYC, and corridor-specific regulatory alignment for Kenya-Canada operations.", href: "/compliance", icon: "🛡️" },
+    { title: "Shipment Tracking", desc: "Real-time logistics visibility across Kenya-Canada freight and trade shipments.", href: "/shipment-tracking", icon: "📦" },
+    { title: "Advisory Services", desc: "Expert advisory on payment readiness, governance, and cross-border strategy for this corridor.", href: "/services", icon: "🎯" },
+  ];
+
   return (
     <>
-      <section className="bg-blue-950 pt-32 pb-16">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-blue-950 pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04]" style={{backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 1px)", backgroundSize: "48px 48px"}}/>
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10" style={{background: "radial-gradient(ellipse 80% 80% at 80% 50%, rgba(197,160,89,0.5), transparent)"}}/>
+        <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-amber-400 text-xs font-bold tracking-widest uppercase mb-3">Corridor</div>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">Kenya ↔ Canada Corridor</h1>
-          <p className="text-white/60 text-xl max-w-2xl">The Kenya-Canada corridor connects East Africa's financial hub with Canadian enterprises. CorridorBridge helps organizations navigate compliance, payments, and logistics across this growing trade lane.</p>
-          <div className="flex flex-wrap gap-4 mt-8">
-            <Link href="/contact" className="btn-primary px-8 py-3.5">Discuss This Corridor</Link>
-            <Link href="/services" className="btn-outline px-8 py-3.5">View Services</Link>
+          <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-[1.05] mb-4">
+            <span style={{color: "#8b5cf6"}}>Kenya</span> ↔ Canada
+          </h1>
+          <h2 className="font-display text-2xl md:text-3xl font-semibold text-white/60 mb-6">East Africa's Financial Hub Connected to Canada</h2>
+          <p className="text-xl text-white/60 max-w-2xl leading-relaxed mb-10">The Kenya-Canada corridor connects East Africa's most sophisticated financial system with Canadian markets. Kenya's leadership in mobile money and fintech makes it a strategic entry point for Canadian businesses.</p>
+          <div className="flex flex-wrap gap-4 mb-12">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-amber-500 text-blue-950 hover:bg-amber-400 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+              Discuss This Corridor
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </Link>
+            <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">
+              View Services
+            </Link>
           </div>
-        </div>
-      </section>
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8">
-            {["Payments", "Compliance", "Logistics", "Advisory"].map(s => (
-              <div key={s} className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-md hover:border-amber-200 transition-all">
-                <div className="text-amber-500 text-xs font-bold tracking-widest uppercase mb-3">{s}</div>
-                <h3 className="font-bold text-blue-950 text-lg mb-3">{s} for {"Kenya ↔ Canada Corridor"}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">Expert {s.toLowerCase()} services tailored specifically for this corridor's regulatory requirements, licensed partners, and operational characteristics.</p>
-                <Link href="/contact" className="text-amber-600 text-xs font-semibold mt-4 inline-flex items-center gap-1 hover:text-amber-700">Learn more →</Link>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10">
+            {stats.map(([value, label]) => (
+              <div key={label}>
+                <div className="font-display text-2xl font-bold" style={{color: "#8b5cf6"}}>{value}</div>
+                <div className="text-xs text-white/40 mt-1">{label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <section className="py-20 bg-blue-950 text-center">
-        <div className="max-w-2xl mx-auto px-6">
-          <h2 className="font-display text-3xl font-bold text-white mb-4">Ready to operate on this corridor?</h2>
-          <p className="text-white/60 mb-8">Talk to our corridor specialists today.</p>
-          <Link href="/contact" className="btn-primary px-8 py-3.5">Book a Corridor Consultation</Link>
+
+      <section className="py-24 bg-blue-950 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04]" style={{backgroundImage: "radial-gradient(circle at 20px 20px, white 1px, transparent 1px)", backgroundSize: "40px 40px"}}/>
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="text-amber-400 text-xs font-bold tracking-widest uppercase mb-3">How We Help</div>
+            <h2 className="font-display text-4xl font-bold text-white mb-4">CorridorBridge on This Corridor</h2>
+            <p className="text-white/60 text-lg max-w-xl mx-auto">End-to-end infrastructure for payments, compliance, logistics, and advisory on the Kenya-Canada corridor.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {services.map(({ title, desc, href, icon }) => (
+              <Link key={title} href={href} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-amber-500/30 hover:-translate-y-1 transition-all duration-300 block group">
+                <div className="text-2xl mb-4 group-hover:scale-110 transition-transform duration-300 inline-block">{icon}</div>
+                <h3 className="font-bold text-white mb-2 text-sm">{title}</h3>
+                <p className="text-white/40 text-xs leading-relaxed">{desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <div className="text-amber-500 text-xs font-bold tracking-widest uppercase mb-3">Other Corridors</div>
+            <h2 className="font-display text-3xl font-bold text-blue-950">Explore Other Trade Lanes</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {otherCorridors.map(([href, label]) => (
+              <Link key={label} href={href} className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg hover:border-amber-200 hover:-translate-y-1 transition-all group">
+                <div className="font-display text-xl font-bold text-blue-950 mb-2 group-hover:text-amber-600 transition-colors">{label}</div>
+                <div className="text-amber-500 text-xs font-semibold flex items-center justify-center gap-1">
+                  Explore corridor
+                  <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-blue-950 text-center relative overflow-hidden">
+        <div className="absolute inset-0" style={{background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(197,160,89,0.08), transparent)"}}/>
+        <div className="relative max-w-2xl mx-auto px-6">
+          <h2 className="font-display text-4xl font-bold text-white mb-4">Ready to operate on this corridor?</h2>
+          <p className="text-white/60 mb-8 text-lg">Book a corridor consultation — we will design the right payment, compliance, and logistics infrastructure for your needs.</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-amber-500 text-blue-950 hover:bg-amber-400 hover:shadow-xl transition-all">
+              Book Corridor Consultation
+            </Link>
+            <Link href="https://app.corridorbridge.com/signup" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">
+              Start Free Trial
+            </Link>
+          </div>
         </div>
       </section>
     </>
