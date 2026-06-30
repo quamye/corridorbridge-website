@@ -149,10 +149,13 @@ export default function CorridorsIndexPage() {
           <p className="text-gray-500 mb-8 text-lg">We are expanding to additional African markets. Contact us to discuss your specific corridor requirements.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-blue-950 text-white hover:bg-blue-900 hover:shadow-xl transition-all">Discuss Your Corridor</Link>
-            <Link href="https://app.corridorbridge.com/signup" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-blue-950 text-blue-950 hover:bg-blue-950 hover:text-white transition-all">Start Free Trial</Link>
+            <Link href="https://ops.corridorbridge.com/login?redirectTo=%2F" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-blue-950 text-blue-950 hover:bg-blue-950 hover:text-white transition-all">Start Free Trial</Link>
           </div>
         </div>
       </section>
     </>
   );
 }
+
+
+

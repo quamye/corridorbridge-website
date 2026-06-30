@@ -14,7 +14,7 @@ const PLANS = [
     color: "#C5A059",
     popular: false,
     cta: "Start Free Trial",
-    href: "https://app.corridorbridge.com/signup",
+    href: "https://ops.corridorbridge.com/login?redirectTo=%2F",
     features: [
       { text: "1 user", included: true },
       { text: "Up to 5 active clients", included: true },
@@ -39,7 +39,7 @@ const PLANS = [
     color: "#C5A059",
     popular: true,
     cta: "Start Free Trial",
-    href: "https://app.corridorbridge.com/signup",
+    href: "https://ops.corridorbridge.com/login?redirectTo=%2F",
     features: [
       { text: "Unlimited users", included: true },
       { text: "Unlimited clients", included: true },
@@ -330,7 +330,7 @@ export default function PricingPage() {
           <h2 className="font-display text-4xl font-bold text-white mb-4">Start your free trial today</h2>
           <p className="text-white/60 mb-8 text-lg">30 days free. No credit card. No commitment.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="https://app.corridorbridge.com/signup" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-amber-500 text-blue-950 hover:bg-amber-400 hover:shadow-xl transition-all">
+            <Link href="https://ops.corridorbridge.com/login?redirectTo=%2F" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-amber-500 text-blue-950 hover:bg-amber-400 hover:shadow-xl transition-all">
               Start Free Trial
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </Link>
@@ -343,3 +343,6 @@ export default function PricingPage() {
     </>
   );
 }
+
+
+

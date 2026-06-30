@@ -6,3 +6,6 @@ export function getSupabaseAdmin() {
   if (!url || !key) throw new Error("Supabase environment variables are not configured.");
   return createClient(url, key);
 }
+
+
+

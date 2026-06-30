@@ -658,7 +658,7 @@ const FEATURES = [
   },
   {
     title: "Client Portal", desc: "Secure document exchange, workflow approvals, and reporting for your business partners.",
-    href: "https://app.corridorbridge.com", accent: "#3b82f6",
+    href: "https://ops.corridorbridge.com/login?redirectTo=%2F", accent: "#3b82f6",
     miniSvg: (
       <svg viewBox="0 0 120 60" fill="none" className="w-full h-12">
         <rect x="5" y="8" width="110" height="44" rx="6" fill="rgba(59,130,246,0.06)" stroke="#3b82f6" strokeWidth="1" strokeOpacity="0.3"/>
@@ -859,7 +859,7 @@ export default function HomePage() {
                   Request a Demo
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </Link>
-                <Link href="https://app.corridorbridge.com/signup" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">
+                <Link href="https://ops.corridorbridge.com/login?redirectTo=%2F" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">
                   Start Free Trial
                 </Link>
               </div>
@@ -1251,8 +1251,8 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { name: "Starter", price: "$59", unit: "CAD/month", desc: "For solo compliance consultants", cta: "Start Free Trial", href: "https://app.corridorbridge.com/signup", popular: false },
-              { name: "Growth", price: "$149", unit: "CAD/user/month", desc: "For boutique advisory firms", cta: "Start Free Trial", href: "https://app.corridorbridge.com/signup", popular: true },
+              { name: "Starter", price: "$59", unit: "CAD/month", desc: "For solo compliance consultants", cta: "Start Free Trial", href: "https://ops.corridorbridge.com/login?redirectTo=%2F", popular: false },
+              { name: "Growth", price: "$149", unit: "CAD/user/month", desc: "For boutique advisory firms", cta: "Start Free Trial", href: "https://ops.corridorbridge.com/login?redirectTo=%2F", popular: true },
               { name: "Enterprise", price: "Custom", unit: "starts $5,000/month", desc: "For large firms and institutions", cta: "Contact Sales", href: "/contact", popular: false },
             ].map(({ name, price, unit, desc, cta, href, popular }) => (
               <div key={name} className={`rounded-2xl p-8 relative transition-all hover:shadow-2xl hover:-translate-y-1 duration-300 ${popular ? "text-white shadow-xl" : "bg-white border border-gray-200"}`}
@@ -1383,7 +1383,7 @@ export default function HomePage() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </Link>
             <Link href="/contact" className="inline-flex items-center gap-2 px-10 py-4 rounded-xl font-semibold text-base border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">Book Consultation</Link>
-            <Link href="https://app.corridorbridge.com/signup" className="inline-flex items-center gap-2 px-10 py-4 rounded-xl font-semibold text-base border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">Start Free Trial</Link>
+            <Link href="https://ops.corridorbridge.com/login?redirectTo=%2F" className="inline-flex items-center gap-2 px-10 py-4 rounded-xl font-semibold text-base border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">Start Free Trial</Link>
           </div>
           <p className="text-white/30 text-sm">30-day free trial · No credit card required · Cancel anytime</p>
         </div>
@@ -1405,3 +1405,6 @@ export default function HomePage() {
     </>
   );
 }
+
+
+

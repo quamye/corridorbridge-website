@@ -76,7 +76,7 @@ export default function Footer() {
                 { label: "About", href: "/about" },
                 { label: "Security", href: "/security" },
                 { label: "Contact", href: "/contact" },
-                { label: "Platform Login", href: "https://app.corridorbridge.com" },
+                { label: "Platform Login", href: "https://ops.corridorbridge.com/login?redirectTo=%2F" },
               ].map(({ label, href }) => (
                 <li key={label}><Link href={href} className="hover:text-amber-400 transition-colors">{label}</Link></li>
               ))}
@@ -159,3 +159,6 @@ export default function Footer() {
     </footer>
   );
 }
+
+
+

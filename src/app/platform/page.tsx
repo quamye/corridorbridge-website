@@ -64,7 +64,7 @@ const MODULES = [
     desc: "Track KPIs, monitor corridor performance, measure risk exposure, and identify growth opportunities. Real-time dashboards built for compliance advisors, executives, and operations teams.",
     features: ["Corridor performance KPIs", "Payment volume and settlement analytics", "Risk exposure monitoring", "Client and engagement reporting", "Custom dashboard views"],
     color: "#3b82f6",
-    href: "https://app.corridorbridge.com",
+    href: "https://ops.corridorbridge.com/login?redirectTo=%2F",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
@@ -144,7 +144,7 @@ export default function PlatformPage() {
                 Request Demo
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </Link>
-              <Link href="https://app.corridorbridge.com/signup" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">
+              <Link href="https://ops.corridorbridge.com/login?redirectTo=%2F" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">
                 Start Free Trial
               </Link>
             </div>
@@ -326,7 +326,7 @@ export default function PlatformPage() {
             <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-amber-500 text-blue-950 hover:bg-amber-400 hover:shadow-xl transition-all">
               Request Demo
             </Link>
-            <Link href="https://app.corridorbridge.com/signup" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">
+            <Link href="https://ops.corridorbridge.com/login?redirectTo=%2F" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">
               Start Free Trial
             </Link>
           </div>
@@ -335,3 +335,6 @@ export default function PlatformPage() {
     </>
   );
 }
+
+
+

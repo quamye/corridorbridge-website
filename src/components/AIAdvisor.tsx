@@ -48,7 +48,7 @@ function buildRecommendation(need: string): string {
 function buildAction(action: string): string {
   const map: Record<string, string> = {
     "Book a Demo": "Perfect. Click the button below to book a personalised demo with our team. We'll walk you through the platform and design a solution for your specific corridor.",
-    "Start Free Trial": "Great choice. You can start your 30-day free trial at app.corridorbridge.com — no credit card required.",
+    "Start Free Trial": "Great choice. Start your trial through CorridorBridge Ops at ops.corridorbridge.com — no credit card required.",
     "View Services": "Our full advisory services are listed at corridorbridge.com/services. You can also request a quote for any specific service.",
     "Talk to a Human": "Of course. Reach our team at hello@corridorbridge.com or use the contact form at corridorbridge.com/contact. We respond within 1 business day.",
   };
@@ -57,7 +57,7 @@ function buildAction(action: string): string {
 
 function getActionLink(text: string): { label: string; href: string } | null {
   if (text.includes("book a personalised demo")) return { label: "Book a Demo", href: "/contact" };
-  if (text.includes("app.corridorbridge.com")) return { label: "Start Free Trial", href: "https://app.corridorbridge.com/signup" };
+  if (text.includes("ops.corridorbridge.com")) return { label: "Start Free Trial", href: "https://ops.corridorbridge.com/login?redirectTo=%2F" };
   if (text.includes("corridorbridge.com/services")) return { label: "View Services", href: "/services" };
   if (text.includes("corridorbridge.com/contact")) return { label: "Contact Us", href: "/contact" };
   return null;
@@ -272,3 +272,6 @@ export default function AIAdvisor() {
     </>
   );
 }
+
+
+

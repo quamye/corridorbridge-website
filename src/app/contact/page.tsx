@@ -105,7 +105,7 @@ export default function ContactPage() {
                   { label: "Headquarters", value: "Canada (serving global corridors)", icon: "📍" },
                   { label: "Email", value: "hello@corridorbridge.com", icon: "✉️" },
                   { label: "Response Time", value: "Within 1 business day", icon: "⏱" },
-                  { label: "Platform", value: "app.corridorbridge.com", icon: "🖥️" },
+                  { label: "Platform", value: "ops.corridorbridge.com", icon: "🖥️" },
                 ].map(({ label, value, icon }) => (
                   <div key={label} className="flex gap-4 items-start mb-5 last:mb-0">
                     <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-lg flex-shrink-0">{icon}</div>
@@ -286,3 +286,6 @@ export default function ContactPage() {
     </>
   );
 }
+
+
+

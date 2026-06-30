@@ -121,7 +121,7 @@ export default function Navbar() {
 
           {/* CTAs */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="https://app.corridorbridge.com/signin"
+            <Link href="https://ops.corridorbridge.com/login?redirectTo=%2F"
               className="text-white/60 hover:text-white text-sm font-medium transition-colors px-3 py-2">
               Platform Login
             </Link>
@@ -162,7 +162,7 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="flex gap-3 pt-4 px-3">
-              <Link href="https://app.corridorbridge.com/signin"
+              <Link href="https://ops.corridorbridge.com/login?redirectTo=%2F"
                 className="text-white/60 text-sm border border-white/20 rounded-xl px-4 py-2.5 font-medium">
                 Login
               </Link>
@@ -176,3 +176,6 @@ export default function Navbar() {
     </nav>
   );
 }
+
+
+

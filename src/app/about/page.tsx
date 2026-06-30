@@ -275,7 +275,7 @@ export default function AboutPage() {
           <h2 className="font-display text-4xl font-bold text-white mb-4">Ready to work with us?</h2>
           <p className="text-white/60 mb-8 text-lg">Start with a 30-day free trial or book a discovery call to discuss your corridor.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="https://app.corridorbridge.com/signup" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-amber-500 text-blue-950 hover:bg-amber-400 hover:shadow-xl transition-all">
+            <Link href="https://ops.corridorbridge.com/login?redirectTo=%2F" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-amber-500 text-blue-950 hover:bg-amber-400 hover:shadow-xl transition-all">
               Start Free Trial
             </Link>
             <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-white/30 text-white hover:border-amber-400 hover:text-amber-400 transition-all">
@@ -287,3 +287,6 @@ export default function AboutPage() {
     </>
   );
 }
+
+
+
