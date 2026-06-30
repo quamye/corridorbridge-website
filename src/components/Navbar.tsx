@@ -125,7 +125,7 @@ export default function Navbar() {
               className="text-white/60 hover:text-white text-sm font-medium transition-colors px-3 py-2">
               Platform Login
             </Link>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 bg-amber-500 text-blue-950 hover:bg-amber-400 hover:shadow-xl hover:-translate-y-0.5">
+            <Link href="/request-demo" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 bg-amber-500 text-blue-950 hover:bg-amber-400 hover:shadow-xl hover:-translate-y-0.5">
               Request Demo
             </Link>
           </div>
@@ -166,7 +166,7 @@ export default function Navbar() {
                 className="text-white/60 text-sm border border-white/20 rounded-xl px-4 py-2.5 font-medium">
                 Login
               </Link>
-              <Link href="/contact" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs bg-amber-500 text-blue-950 hover:bg-amber-400 transition-all">
+              <Link href="/request-demo" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-xs bg-amber-500 text-blue-950 hover:bg-amber-400 transition-all">
                 Request Demo
               </Link>
             </div>
