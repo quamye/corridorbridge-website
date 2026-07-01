@@ -77,15 +77,24 @@ export default function ContactPage() {
           {/* Quick contact options */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             {INTENTS.map(({ value, label, icon }) => (
-              <button key={value} onClick={() => update("intent", value)}
-                className={`p-4 rounded-2xl border-2 text-left transition-all duration-200 ${
-                  form.intent === value
-                    ? "bg-amber-500/20 border-amber-500 text-white"
-                    : "bg-white/5 border-white/10 text-white/60 hover:bg-white/10 hover:border-white/20"
-                }`}>
-                <div className="text-xl mb-2">{icon}</div>
-                <div className="text-xs font-semibold">{label}</div>
-              </button>
+              value === "free_trial" ? (
+                <a key={value} href="https://ops.corridorbridge.com/login?redirectTo=%2F"
+                  aria-label="Start Free Trial — continue to CorridorBridge Ops login"
+                  className="p-4 rounded-2xl border-2 text-left transition-all duration-200 bg-white/5 border-white/10 text-white/60 hover:bg-white/10 hover:border-white/20 block">
+                  <div className="text-xl mb-2">{icon}</div>
+                  <div className="text-xs font-semibold">{label}</div>
+                </a>
+              ) : (
+                <button key={value} onClick={() => update("intent", value)}
+                  className={`p-4 rounded-2xl border-2 text-left transition-all duration-200 ${
+                    form.intent === value
+                      ? "bg-amber-500/20 border-amber-500 text-white"
+                      : "bg-white/5 border-white/10 text-white/60 hover:bg-white/10 hover:border-white/20"
+                  }`}>
+                  <div className="text-xl mb-2">{icon}</div>
+                  <div className="text-xs font-semibold">{label}</div>
+                </button>
+              )
             ))}
           </div>
         </div>
@@ -178,14 +187,22 @@ export default function ContactPage() {
                       <label className="block text-xs font-bold text-blue-950 mb-2 uppercase tracking-wide">I want to</label>
                       <div className="grid grid-cols-2 gap-2">
                         {INTENTS.map(({ value, label }) => (
-                          <button key={value} type="button" onClick={() => update("intent", value)}
-                            className={`py-2.5 px-3 rounded-xl text-xs font-semibold border-2 transition-all ${
-                              form.intent === value
-                                ? "border-blue-950 bg-blue-950 text-white"
-                                : "border-gray-200 text-gray-600 hover:border-blue-950"
-                            }`}>
-                            {label}
-                          </button>
+                          value === "free_trial" ? (
+                            <a key={value} href="https://ops.corridorbridge.com/login?redirectTo=%2F"
+                              aria-label="Start Free Trial — continue to CorridorBridge Ops login"
+                              className="py-2.5 px-3 rounded-xl text-xs font-semibold border-2 transition-all border-gray-200 text-gray-600 hover:border-blue-950 flex items-center justify-center text-center">
+                              {label}
+                            </a>
+                          ) : (
+                            <button key={value} type="button" onClick={() => update("intent", value)}
+                              className={`py-2.5 px-3 rounded-xl text-xs font-semibold border-2 transition-all ${
+                                form.intent === value
+                                  ? "border-blue-950 bg-blue-950 text-white"
+                                  : "border-gray-200 text-gray-600 hover:border-blue-950"
+                              }`}>
+                              {label}
+                            </button>
+                          )
                         ))}
                       </div>
                     </div>
