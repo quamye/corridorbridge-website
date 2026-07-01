@@ -122,7 +122,7 @@ export default function RequestDemoPage() {
         <div className="absolute inset-0"
           style={{ background: "radial-gradient(circle at 85% 10%, rgba(197,160,89,0.16), transparent 45%)" }} />
 
-        <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-16 lg:pt-36 lg:pb-20 grid lg:grid-cols-2 gap-12 items-start">
+        <div id="request-demo-form" className="relative max-w-7xl mx-auto px-6 pt-28 pb-16 lg:pt-36 lg:pb-20 grid lg:grid-cols-2 gap-12 items-start">
           {/* Left: copy */}
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 mb-6">
@@ -157,7 +157,7 @@ export default function RequestDemoPage() {
                   <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
                 </div>
                 <h3 className="font-bold text-blue-950 text-lg mb-2">Request received</h3>
-                <p className="text-gray-500 text-sm">Thank you. Our team will be in touch within one business day to arrange your walkthrough.</p>
+                <p className="text-gray-500 text-sm">Thank you. Your demo request has been received. CorridorBridge will contact you shortly.</p>
               </div>
             ) : (
               <>
@@ -273,6 +273,50 @@ export default function RequestDemoPage() {
           ))}
         </div>
       </section>
+
+      {/* How clients and partners get access */}
+      <section className="bg-gray-50 py-16 lg:py-20 border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-amber-600 mb-2">Account Access</div>
+            <h2 className="font-serif text-3xl font-bold text-blue-950 mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>How clients and partners get access</h2>
+            <p className="text-gray-500 text-sm max-w-2xl mx-auto leading-relaxed">
+              CorridorBridge Ops&trade; access is reviewed before account creation. Clients, partners, PSPs, banks, and corridor operators can request access by submitting the form above. Our team reviews the request, confirms the organization context, and then creates or approves the appropriate CorridorBridge Ops&trade; workspace access.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+            {[
+              ["1", "Submit access request", "Complete the request form with your organization and corridor details."],
+              ["2", "CorridorBridge reviews", "We confirm your organization context and corridor requirements."],
+              ["3", "Workspace approved", "We create or approve the appropriate CorridorBridge Ops&trade; access."],
+              ["4", "Receive instructions", "You receive secure sign-in instructions for your workspace."],
+              ["5", "Sign in to Ops", "Access CorridorBridge Ops&trade; and your corridor workspace."],
+            ].map(([n, t, d]) => (
+              <div key={n} className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-blue-950 text-white text-sm font-bold flex items-center justify-center mb-3">{n}</div>
+                <div className="font-bold text-blue-950 text-sm mb-1.5">{t}</div>
+                <div className="text-gray-500 text-xs leading-relaxed">{d}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#request-demo-form"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm bg-amber-500 text-blue-950 hover:bg-amber-400 hover:shadow-xl transition-all">
+              Request Access
+            </a>
+            <a href="https://ops.corridorbridge.com/login?redirectTo=%2F"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm border-2 border-blue-950/20 text-blue-950 hover:border-blue-950 transition-all">
+              Sign in to CorridorBridge Ops&trade;
+            </a>
+          </div>
+          <p className="text-center text-[12px] text-gray-400 mt-5">
+            Access is granted after organization review. CorridorBridge does not offer public self-service account creation.
+          </p>
+        </div>
+      </section>
+
 
       {/* ── Who it's for ────────────────────────────────────────────── */}
       <section className="bg-gray-50 py-16 lg:py-20">
